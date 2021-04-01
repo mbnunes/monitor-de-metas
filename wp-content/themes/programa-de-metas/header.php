@@ -22,6 +22,8 @@
 			var wpAjaxUrl = '<?php echo admin_url('admin-ajax.php');?>';
 			var templateUrl = '<?php echo get_template_directory_uri(); ?>';
 			var blogUrl = '<?php echo bloginfo('url');?>';
+			var postId = '';
+			var eixoId = '';
 		</script>
 		
 		<script>(function(d, s, id) {
@@ -36,18 +38,16 @@
 			if(!empty($_GET['pid'])):
 				$post = get_post($_GET['pid']);
 				setup_postdata($post);
+				echo '<script type="text/javascript"> \n //testes';
+				echo 'console.log(1)';
+				echo 'postId = '. $_GET['pid'].';';
+				$eixo = wp_get_post_terms($post->ID, 'eixos');
+				if(!empty($eixo)):
+				echo 'eixoId ='.$eixo[0]->slug.';';
+				endif;
+				echo 'console.log(1)';
+				echo '</script>';
 				?>
-					<script type="text/javascript">
-						var postId = '<?php echo $_GET['pid'];?>';
-						<?php
-						$eixo = wp_get_post_terms($post->ID, 'eixos');
-						if(!empty($eixo)):
-							?>
-								var eixoId = '<?php echo $eixo[0]->slug;?>';
-							<?php
-						endif;
-						?>
-					</script>
 					<meta property="og:type" content="blog" />
 					<meta property="og:title" content="Programa de Metas da Cidade de São Paulo - Meta <?php the_title();?>" />
 					<meta property="og:description" content="<?php echo get_the_excerpt();?>" />
