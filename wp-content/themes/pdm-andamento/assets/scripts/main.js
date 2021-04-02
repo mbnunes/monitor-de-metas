@@ -59,27 +59,27 @@ require.config({
 require(['chart', 'map', 'app', 'jquery', 'buscaPorCep', 'list', 'Config', 'polyfil', 'ticker'],
   function (chart, map, app, $, buscaPorCep, List, Config) {
     'use strict';
-    console.log("retorno app: ", app);
+    // console.log("retorno app: ", app);
     // use app here
     app.init();
 
     // startup map
     $('.map-render').each(function () {
-        console.log(this);
+        // console.log(this);
         map.init(this);
     });
 
     // startup project map
     $('.projects-map-render').each(function () {
-        console.log(this);
+        // console.log(this);
         map.plotProjects(this);
     });
 
-    console.log("is Chart? --> "+$('.chart-render'),1);
+    console.log("is Chart? --> "+$('.chart-render'));
     // startup chart
     $('.chart-render').each(function () {
         var data = $(this).data('chart');
-        console.log("retorno chart: ",data);
+        // console.log("retorno chart: ",data);
         switch (data.type) {
            case 'pie':
               switch (data.size) {
