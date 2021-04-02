@@ -72,9 +72,11 @@ require(['chart', 'map', 'app', 'jquery', 'buscaPorCep', 'list', 'Config', 'poly
         map.plotProjects(this);
     });
 
+    console.log("is Chart? --> "+$('.chart-render'),20);
     // startup chart
     $('.chart-render').each(function () {
         var data = $(this).data('chart');
+        console.log(data);
         switch (data.type) {
            case 'pie':
               switch (data.size) {
@@ -122,7 +124,7 @@ require(['chart', 'map', 'app', 'jquery', 'buscaPorCep', 'list', 'Config', 'poly
 
     map.adjustMapPosition();
 
-    jQuery(window).resize(map.adjustMapPosition);
+    jQuery(window).reload(map.adjustMapPosition);
 });
 
 
