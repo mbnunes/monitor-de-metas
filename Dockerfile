@@ -27,6 +27,8 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | s
 
 RUN npm config set strict-ssl false && npm install -g bower
 
+RUN ln -s /usr/bin/nodejs /usr/bin/node
+
 RUN git clone https://github.com/mbnunes/monitor-de-metas.git
 
 RUN wget http://br.wordpress.org/wordpress-3.9.1-pt_BR.zip && \
