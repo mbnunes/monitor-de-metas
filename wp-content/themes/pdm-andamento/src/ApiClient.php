@@ -50,7 +50,7 @@ class ApiClient
     protected function fazerRequisicao($path, $type = 'get', $data = null)
     {
         try {
-            var_dump($data);
+            // var_dump($data);
             if (($type == 'post') && (count($data) > 0)) {
                 return $this->client->post($this->url . $path, array(
                     'body' => $data));
