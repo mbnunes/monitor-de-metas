@@ -82,7 +82,7 @@ require(['chart', 'map', 'app', 'jquery', 'buscaPorCep', 'list', 'Config', 'poly
     // startup chart
     $('.chart-render').each(function () {
         var data = $(this).data('chart');
-        console.log("retorno chart: "+data.type;
+        console.log("retorno chart: "+data.type);
         switch (data.type) {
            case 'pie':
               switch (data.size) {
