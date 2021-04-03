@@ -4,7 +4,7 @@ require.config({
         d3: 'http://ec2-54-196-34-239.compute-1.amazonaws.com/wp-content/themes/pdm-andamento/node_modules/d3/dist/d3.min',
         //leaflet: '../bower_components/leaflet/src/Leaflet',
         //leaflet: "//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.2/leaflet",
-        foundation: 'http://ec2-54-196-34-239.compute-1.amazonaws.com/wp-content/themes/pdm-andamento/node_modules/foundation/js/foundation/foundation',
+        foundation: 'http://ec2-54-196-34-239.compute-1.amazonaws.com/wp-content/themes/pdm-andamento/node_modules/a/foundation/js/foundation',
         polyfil: 'http://ec2-54-196-34-239.compute-1.amazonaws.com/wp-content/themes/pdm-andamento/assets/bower_components/REM-unit-polyfill/js/rem',
         ticker: 'http://ec2-54-196-34-239.compute-1.amazonaws.com/wp-content/themes/pdm-andamento/assets/bower_components/jQuery-News-Ticker/includes/jquery.ticker',
         list: 'http://ec2-54-196-34-239.compute-1.amazonaws.com/wp-content/themes/pdm-andamento/assets/bower_components/list.js/dist/list',
@@ -61,8 +61,8 @@ require(['chart', 'map', 'app', 'jquery', 'buscaPorCep', 'list', 'Config', 'poly
     'use strict';
     // use app here
     app.init();
-    console.log(chart);
-    console.log(map);
+    // console.log(chart);
+    // console.log(map);
     // console.log("retorno app: " + app);
     // console.log("retorno List: " + List);
     // console.log("retorno Config: " + Config);
@@ -82,7 +82,7 @@ require(['chart', 'map', 'app', 'jquery', 'buscaPorCep', 'list', 'Config', 'poly
     // startup chart
     $('.chart-render').each(function () {
         var data = $(this).data('chart');
-        // console.log("retorno chart: ",data);
+        console.log("retorno chart: "+data.type;
         switch (data.type) {
            case 'pie':
               switch (data.size) {

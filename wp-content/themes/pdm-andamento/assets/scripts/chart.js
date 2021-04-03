@@ -26,7 +26,7 @@ define(['jquery', 'd3'], function ($, d3) {
         r = config.radius,
         s = config.stroke,
         color = config.color;
-
+console.log("pie: "+data);
         var vis = d3.select(selector)
             .append('svg:svg')
             .attr('class', 'chart-pie')
