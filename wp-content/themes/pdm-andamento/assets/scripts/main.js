@@ -1,7 +1,7 @@
 require.config({
     paths: {
         jquery: 'http://ec2-54-196-34-239.compute-1.amazonaws.com/wp-content/themes/pdm-andamento/assets/bower_components/jquery/dist/jquery',
-        d3: 'http://ec2-54-196-34-239.compute-1.amazonaws.com/wp-content/themes/pdm-andamento/assets/node_modules/d3/dist/d3.min',
+        d3: 'http://ec2-54-196-34-239.compute-1.amazonaws.com/wp-content/themes/pdm-andamento/node_modules/d3/dist/d3.min',
         //leaflet: '../bower_components/leaflet/src/Leaflet',
         //leaflet: "//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.2/leaflet",
         foundation: 'http://ec2-54-196-34-239.compute-1.amazonaws.com/wp-content/themes/pdm-andamento/assets/bower_components/foundation/js/foundation',
