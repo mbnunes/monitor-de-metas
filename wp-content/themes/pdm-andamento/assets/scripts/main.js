@@ -1,13 +1,13 @@
 require.config({
     paths: {
         jquery: 'http://ec2-54-196-34-239.compute-1.amazonaws.com/wp-content/themes/pdm-andamento/assets/bower_components/jquery/dist/jquery',
-        d3: 'http://ec2-54-196-34-239.compute-1.amazonaws.com/wp-content/themes/pdm-andamento/assets/bower_components/d3/d3.min',
+        d3: 'http://ec2-54-196-34-239.compute-1.amazonaws.com/wp-content/themes/pdm-andamento/assets/node_modules/d3/dist/d3.min',
         //leaflet: '../bower_components/leaflet/src/Leaflet',
         //leaflet: "//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.2/leaflet",
         foundation: 'http://ec2-54-196-34-239.compute-1.amazonaws.com/wp-content/themes/pdm-andamento/assets/bower_components/foundation/js/foundation',
-        polyfil: 'http://ec2-54-196-34-239.compute-1.amazonaws.com/wp-content/themes/pdm-andamento/assets/bower_components/REM-unit-polyfill/js/rem.min',
+        polyfil: 'http://ec2-54-196-34-239.compute-1.amazonaws.com/wp-content/themes/pdm-andamento/assets/bower_components/REM-unit-polyfill/js/rem',
         ticker: 'http://ec2-54-196-34-239.compute-1.amazonaws.com/wp-content/themes/pdm-andamento/assets/bower_components/jQuery-News-Ticker/includes/jquery.ticker',
-        list: 'http://ec2-54-196-34-239.compute-1.amazonaws.com/wp-content/themes/pdm-andamento/assets/bower_components/list.js/dist/list.min',
+        list: 'http://ec2-54-196-34-239.compute-1.amazonaws.com/wp-content/themes/pdm-andamento/assets/bower_components/list.js/dist/list',
         // mapbox: 'mapbox/mapbox',
         // 'leaflet.ajax': '../bower_components/leaflet.ajax/dist/leaflet.ajax.min',
         // 'leaflet.markercluster': '../bower_components/leaflet.markercluster/dist/leaflet.markercluster',
@@ -63,9 +63,9 @@ require(['chart', 'map', 'app', 'jquery', 'buscaPorCep', 'list', 'Config', 'poly
     app.init();
     console.log(chart);
     console.log(map);
-    console.log("retorno app: " + app);
-    console.log("retorno List: " + List);
-    console.log("retorno Config: " + Config);
+    // console.log("retorno app: " + app);
+    // console.log("retorno List: " + List);
+    // console.log("retorno Config: " + Config);
     // startup map
     $('.map-render').each(function () {
         // console.log(this);
