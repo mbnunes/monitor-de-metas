@@ -61,8 +61,8 @@ require(['chart', 'map', 'app', 'jquery', 'buscaPorCep', 'list', 'Config', 'poly
     'use strict';
     // use app here
     app.init();
-    console.log("retorno chart: " + chart);
-    console.log("retorno map: " + map);
+    console.log(chart);
+    console.log(map);
     console.log("retorno app: " + app);
     console.log("retorno List: " + List);
     console.log("retorno Config: " + Config);
