@@ -17,11 +17,11 @@ define(['jquery', 'list', 'foundation'], function ($,List) {
                 scroll = getCurrentScroll(),
                 bottom = getFullHeight();
 
-            if (scroll >= (bottom-100)) {
-                $('.filter-bar, #filter-options').css('visibility','hidden');
-            } else {
-                $('.filter-bar, #filter-options').css('visibility','visible');
-            }
+            // if (scroll >= (bottom-100)) {
+            //     $('.filter-bar, #filter-options').css('visibility','hidden');
+            // } else {
+            //     $('.filter-bar, #filter-options').css('visibility','visible');
+            // }
 
             if ( scroll >= shrinkHeader) {
                 $('.title-bar').addClass('shrink');

@@ -61,7 +61,7 @@ require(['chart', 'map', 'app', 'jquery', 'buscaPorCep', 'list', 'Config', 'poly
     'use strict';
     // use app here
     app.init();
-    console.log("retorno app: ", app);
+    console.log("retorno chart: ", chart);
 
     // startup map
     $('.map-render').each(function () {
