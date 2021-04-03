@@ -59,9 +59,9 @@ require.config({
 require(['chart', 'map', 'app', 'jquery', 'buscaPorCep', 'list', 'Config', 'polyfil', 'ticker'],
   function (chart, map, app, $, buscaPorCep, List, Config) {
     'use strict';
-    // console.log("retorno app: ", app);
     // use app here
     app.init();
+    console.log("retorno app: ", app);
 
     // startup map
     $('.map-render').each(function () {
@@ -75,7 +75,7 @@ require(['chart', 'map', 'app', 'jquery', 'buscaPorCep', 'list', 'Config', 'poly
         map.plotProjects(this);
     });
 
-    console.log("is Chart? --> "+$('.chart-render'));
+    // console.log("is Chart? --> "+$('.chart-render'));
     // startup chart
     $('.chart-render').each(function () {
         var data = $(this).data('chart');
