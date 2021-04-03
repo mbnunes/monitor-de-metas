@@ -26,7 +26,7 @@ define(['jquery', 'd3'], function ($, d3) {
         r = config.radius,
         s = config.stroke,
         color = config.color;
-
+console.log("pie: "+data);
         var vis = d3.select(selector)
             .append('svg:svg')
             .attr('class', 'chart-pie')
@@ -66,6 +66,7 @@ define(['jquery', 'd3'], function ($, d3) {
 
     // Large pie chart
     _pieLarge = function _pieLarge(selector, data) {
+        console.log("pielarge: "+data);
         var config = {
             width : 226,
             height : 226,

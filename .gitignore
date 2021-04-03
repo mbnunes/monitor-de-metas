@@ -40,5 +40,6 @@ wp-content/themes/pdm-andamento/vendor/*
 wp-content/themes/pdm-andamento/log/api.log
 wp-content/themes/pdm-andamento/node_modules/
 wp-content/themes/pdm-andamento/.sass-cache/
+wp-content/themes/pdm-andamento/package-lock.json
 wp-content/themes/pdm-andamento/assets/bower_components/
 # !wp-content/themes/my-theme/
