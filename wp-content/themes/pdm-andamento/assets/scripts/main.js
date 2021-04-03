@@ -61,8 +61,8 @@ require(['chart', 'map', 'app', 'jquery', 'buscaPorCep', 'list', 'Config', 'poly
     'use strict';
     // use app here
     app.init();
-    console.log(chart);
-    console.log(map);
+    // console.log(chart);
+    // console.log(map);
     // console.log("retorno app: " + app);
     // console.log("retorno List: " + List);
     // console.log("retorno Config: " + Config);
@@ -82,7 +82,7 @@ require(['chart', 'map', 'app', 'jquery', 'buscaPorCep', 'list', 'Config', 'poly
     // startup chart
     $('.chart-render').each(function () {
         var data = $(this).data('chart');
-        // console.log("retorno chart: ",data);
+        console.log("retorno chart: "+data.type);
         switch (data.type) {
            case 'pie':
               switch (data.size) {

@@ -66,6 +66,7 @@ console.log("pie: "+data);
 
     // Large pie chart
     _pieLarge = function _pieLarge(selector, data) {
+        console.log("pielarge: "+data);
         var config = {
             width : 226,
             height : 226,
