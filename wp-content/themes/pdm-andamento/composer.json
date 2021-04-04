@@ -6,9 +6,7 @@
     "require": {
         "guzzlehttp/streams": "1.0.0-rc.1",
         "guzzlehttp/guzzle": "4.0.0-rc.1",
-        "monolog/monolog": "~1.7",
-        "upstatement/routes": "*",
-        "timber/timber":"1.*"
+        "monolog/monolog": "~1.7"
     },
     "authors": [
         {

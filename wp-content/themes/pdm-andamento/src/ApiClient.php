@@ -64,18 +64,9 @@ class ApiClient
         //     }
         // }
         try {
-            // var_dump($data);
-            if (($type == 'post') && (count($data) > 0)) {
-                return $this->client->post($this->url . $path, array(
-                    'body' => $data));
-            } else {
-                return $this->client->get($this->url . $path);
-            }
-        } catch (RequestException $e) {
-            $this->gravarLog($e->getRequest());
-            if ($e->hasResponse()) {
-                $this->gravarLog($e->getResponse());
-            }
+            return new ErrorException("Reuisição indisponivel: <pre> GuzzleHttp\Client  not found",1);
+        } catch (\Throwable $th) {
+            throw $th;
         }
     }
 
