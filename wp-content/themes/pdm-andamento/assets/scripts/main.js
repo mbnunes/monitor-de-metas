@@ -124,7 +124,7 @@ require(['chart', 'map', 'app', 'jquery', 'buscaPorCep', 'list', 'Config', 'poly
 
     map.adjustMapPosition();
 
-    jQuery(window).resize(map.adjustMapPosition);
+    jQuery(window).reload(map.adjustMapPosition);
 });
 
 
