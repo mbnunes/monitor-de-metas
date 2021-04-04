@@ -37,7 +37,6 @@ class PaginaMeta extends Pagina
 
 
         if (!empty($context['meta']['transversalidade'])) {
-            var_dump($context['meta']['transversalidade']);
             $transvs = split(',', $context['meta']['transversalidade']);
             $context['transversalidade'] = array();
 

@@ -32,8 +32,7 @@ var MAP = {
     },
 
     adjustMapPosition : function () {
-        console.log($('.projects-map-render').size());
-        if($('.projects-map-render').size() > 0) {
+        if($('.projects-map-render').size()>0) {
             if ($('.projects-map-render').hasClass('leaflet-fullscreen-on')) {
                 $('.projects-map-render').css('top', '0px');
             } else {

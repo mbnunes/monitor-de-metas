@@ -18,9 +18,9 @@ define(['jquery', 'list', 'foundation'], function ($,List) {
                 bottom = getFullHeight();
 
             if (scroll >= (bottom-100)) {
-                $('.filter-bar, #filter-options').css('visibility','hidden');
+                $('.filter-bar, #filter-options').css('visibility','hidden')
             } else {
-                $('.filter-bar, #filter-options').css('visibility','visible');
+                $('.filter-bar, #filter-options').css('visibility','visible')
             }
 
             if ( scroll >= shrinkHeader) {
@@ -52,7 +52,7 @@ define(['jquery', 'list', 'foundation'], function ($,List) {
                 alert('Verifique o preenchimento dos campos');
                 return;
             }
-            console.log("site url",SITE_URL);
+
             $.ajax({
                 type: "POST",
                 url: SITE_URL + '/metaFollow/' + meta,
