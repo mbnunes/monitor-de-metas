@@ -78,6 +78,7 @@ require(['chart', 'map', 'app', 'jquery', 'buscaPorCep', 'list', 'Config', 'poly
         map.plotProjects(this);
     });
 
+
     // console.log("is Chart? --> "+$('.chart-render'));
     // startup chart
     $('.chart-render').each(function () {
@@ -130,7 +131,7 @@ require(['chart', 'map', 'app', 'jquery', 'buscaPorCep', 'list', 'Config', 'poly
 
     map.adjustMapPosition();
 
-    jQuery(window).resize(map.adjustMapPosition);
+    jQuery(window).reload(map.adjustMapPosition);
 });
 
 
