@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd /monitor-de-metas
+git checkout ${BRANCH}
 git pull
 chown -R www-data: /monitor-de-metas
 

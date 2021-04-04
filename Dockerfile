@@ -12,6 +12,7 @@ ENV TITLE='title'
 ENV ADMUSER='admin' 
 ENV ADMPASS='pass1234' 
 ENV ADMMAIL='a@a.com'
+ENV BRANCH="master"
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get upgrade -y 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install curl php5-cli vim wget curl nodejs npm git unzip mysql-client -y -o Dpkg::Options::="--force-confold"
