@@ -690,6 +690,7 @@ function create_subprefeituras_taxonomy() {
 add_action('init', 'create_subprefeituras_taxonomy', 0);
 
 function metas_create() {
+	var_dump("Criando metas");
     add_meta_box('metas_meta_termos_tecnicos', 'Definições dos termos técnicos', 'metas_meta_termos_tecnicos', 'metas');
 	add_meta_box('metas_meta_o_que_vai_ser_entregue', 'O que vai ser entregue', 'metas_meta_o_que_vai_ser_entregue', 'metas');
 	add_meta_box('metas_meta_custo_total', 'Custo total', 'metas_meta_custo_total', 'metas');
