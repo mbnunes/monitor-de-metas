@@ -2,7 +2,6 @@
 
 namespace Pdm;
 
-use ErrorException;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
@@ -35,7 +34,7 @@ class ApiClient
     public function __construct()
     {
         $this->url = API_URL;
-        // $this->client = new Client();
+        $this->client = new Client();
 
         // $cachePlugin = new CachePlugin(array(
         //     'storage' => new DefaultCacheStorage(
@@ -50,155 +49,86 @@ class ApiClient
 
     protected function fazerRequisicao($path, $type = 'get', $data = null)
     {
-        // try {
-        //     if (($type == 'post') && (count($data) > 0)) {
-        //         return $this->client->post($this->url . $path, array(
-        //             'body' => $data));
-        //     } else {
-        //         return $this->client->get($this->url . $path);
-        //     // }
-        // } catch (RequestException $e) {
-        //     $this->gravarLog($e->getRequest());
-        //     if ($e->hasResponse()) {
-        //         $this->gravarLog($e->getResponse());
-        //     }
-        // }
         try {
-            return new ErrorException("Reuisição indisponivel: <pre> GuzzleHttp\Client  not found",1);
-        } catch (\Throwable $th) {
-            throw $th;
+            // var_dump($data);
+            if (($type == 'post') && (count($data) > 0)) {
+                return $this->client->post($this->url . $path, array(
+                    'body' => $data));
+            } else {
+                return $this->client->get($this->url . $path);
+            }
+        } catch (RequestException $e) {
+            $this->gravarLog($e->getRequest());
+            if ($e->hasResponse()) {
+                $this->gravarLog($e->getResponse());
+            }
         }
     }
 
     protected function gravarLog($mensagem)
     {
         // create a log channel
-        // if (!($this->log instanceof Logger)) {
-        //     $this->log = new Logger('api');
-        // }
-        // $this->log->pushHandler(new StreamHandler(dirname(__FILE__).'/../log/api.log', Logger::WARNING));
-
-        // // add records to the log
-        // $this->log->addWarning($mensagem);
-
-        try {
-            return new ErrorException("Requisição indisponivel: <pre> StreamHandler not found",1);
-        } catch (\Throwable $th) {
-            throw $th;
+        if (!($this->log instanceof Logger)) {
+            $this->log = new Logger('api');
         }
+        $this->log->pushHandler(new StreamHandler(dirname(__FILE__).'/../log/api.log', Logger::WARNING));
+
+        // add records to the log
+        $this->log->addWarning($mensagem);
     }
 
     public function getSubPrefeituras()
     {
-        // $response = $this->fazerRequisicao('prefectures');
-        // return $response->json();
-
-        try {
-            return $this->fazerRequisicao('prefectures');
-        } catch (\Throwable $th) {
-            return new ErrorException("Throw Error:: <pre> getSubPrefeituras response",1);
-            throw $th;
-        }
-        
+        $response = $this->fazerRequisicao('prefectures');
+        return $response->json();
     }
 
     public function getObjetivos()
     {
-        // $response = $this->fazerRequisicao('objectives');
-        // return $response->json();
-
-        try {
-            return $this->fazerRequisicao('objectives');
-        } catch (\Throwable $th) {
-            return new ErrorException("Throw Error:: <pre> getObjetivos response",1);
-            throw $th;
-        }
+        $response = $this->fazerRequisicao('objectives');
+        return $response->json();
     }
 
     public function getSecretarias()
     {
-        
-        // return $response->json();
-
-        try {
-            return $this->fazerRequisicao('secretaries');
-        } catch (\Throwable $th) {
-            return new ErrorException("Throw Error:: <pre> getSecretarias response",1);
-            throw $th;
-        }
+        $response = $this->fazerRequisicao('secretaries');
+        return $response->json();
     }
 
     public function getEixos()
     {
-        // $response = $this->fazerRequisicao('axes');
-        // return $response->json();
-        try {
-            return $this->fazerRequisicao('axes');
-        } catch (\Throwable $th) {
-            return new ErrorException("Throw Error:: <pre> getEixos response",1);
-            throw $th;
-        }
-        
+        $response = $this->fazerRequisicao('axes');
+        return $response->json();
     }
 
     public function getArticulacoes()
     {
-        // $response = $this->fazerRequisicao('articulations');
-        // return $response->json();
-        try {
-            return  $this->fazerRequisicao('articulations');
-        } catch (\Throwable $th) {
-            return new ErrorException("Throw Error:: <pre> getArticulacoes response",1);
-            throw $th;
-        }
+        $response = $this->fazerRequisicao('articulations');
+        return $response->json();
     }
 
     public function getSelos()
     {
-        // $response = $this->fazerRequisicao('labels');
-        // return $response->json();
-        try {
-            return $this->fazerRequisicao('articulations');
-        } catch (\Throwable $th) {
-            return new ErrorException("Throw Error:: <pre> getSelos response",1);
-            throw $th;
-        }
+        $response = $this->fazerRequisicao('labels');
+        return $response->json();
     }
 
     public function getProjeto($id)
     {
-        // $response = $this->fazerRequisicao('project/'.$id);
-        // return $response->json();
-        try {
-            return $this->fazerRequisicao('project/'.$id);
-        } catch (\Throwable $th) {
-            return new ErrorException("Throw Error:: <pre> getProjeto response",1);
-            throw $th;
-        }
+        $response = $this->fazerRequisicao('project/'.$id);
+        return $response->json();
     }
 
     public function getTiposProjeto()
     {
-        // $response = $this->fazerRequisicao('projects/types');
-        // return $response->json();
-        try {
-            return  $this->fazerRequisicao('projects/types');
-        } catch (\Throwable $th) {
-            return new ErrorException("Throw Error:: <pre> getProjeto response",1);
-            throw $th;
-        }
+        $response = $this->fazerRequisicao('projects/types');
+        return $response->json();
     }
 
     public function getProjetoProgresso($id)
     {
-        // $response = $this->fazerRequisicao('project/'.$id.'/progress');
-        // return $response->json();
-        try {
-            return  $this->fazerRequisicao('project/'.$id.'/progress');
-        } catch (\Throwable $th) {
-            return new ErrorException("Throw Error:: <pre> getProjeto response",1);
-            throw $th;
-        }
+        $response = $this->fazerRequisicao('project/'.$id.'/progress');
+        return $response->json();
     }
 
     public function preparaDadosMesAMesPorPrefeitura($progresso, $agrupado_todas_prefeitura = false)
@@ -306,53 +236,26 @@ class ApiClient
 
     public function getFasesPorTipoProjeto($tipo)
     {
-        // $response = $this->fazerRequisicao('project/type/'.$tipo.'/milestones');
-        // return $response->json();
-        try {
-            return  $this->fazerRequisicao('project/type/'.$tipo.'/milestones');
-        } catch (\Throwable $th) {
-            return new ErrorException("Throw Error:: <pre> getFasesPorTipoProjeto response",1);
-            throw $th;
-        }
+        $response = $this->fazerRequisicao('project/type/'.$tipo.'/milestones');
+        return $response->json();
     }
 
     public function getMeta($id)
     {
-        // $response = $this->fazerRequisicao('goal/'.$id);
-        // return $response->json();
-
-        try {
-            return  $this->fazerRequisicao('goal/'.$id);
-        } catch (\Throwable $th) {
-            return new ErrorException("Throw Error:: <pre> getMeta response",1);
-            throw $th;
-        }
-        
-
+        $response = $this->fazerRequisicao('goal/'.$id);
+        return $response->json();
     }
 
     public function getMetaPorcentagemConcluida($id)
     {
-        // $response = $this->fazerRequisicao('goal/'.$id.'/status');
-        // return $response->json();
-        try {
-            return  $this->fazerRequisicao('goal/'.$id.'/status');
-        } catch (\Throwable $th) {
-            return new ErrorException("Throw Error:: <pre> getMetaPorcentagemConcluida response",1);
-            throw $th;
-        }
+        $response = $this->fazerRequisicao('goal/'.$id.'/status');
+        return $response->json();
     }
 
     public function getMetaProgresso($id)
     {
-        // $response = $this->fazerRequisicao('goal/'.$id.'/progress');
-        // return $response->json();
-        try {
-            return  $this->fazerRequisicao('goal/'.$id.'/progress');
-        } catch (\Throwable $th) {
-            return new ErrorException("Throw Error:: <pre> getMetaProgresso response",1);
-            throw $th;
-        }
+        $response = $this->fazerRequisicao('goal/'.$id.'/progress');
+        return $response->json();
     }
 
     protected function validateInput($value)
@@ -398,31 +301,19 @@ class ApiClient
         $url_filters = 'goals?' .  http_build_query($filter);
 
         $response = $this->fazerRequisicao($url_filters);
-        return $response;
+        return $response->json();
     }
 
     public function getSubPrefeiturasPorCoordenadas($lat, $long)
     {
-        // $response = $this->fazerRequisicao('prefectures/findByCoordinates/'.$lat.'/'.$long);
-        // return $response->json();
-        try {
-            return  $this->fazerRequisicao('prefectures/findByCoordinates/'.$lat.'/'.$long);
-        } catch (\Throwable $th) {
-            return new ErrorException("Throw Error:: <pre> getSubPrefeiturasPorCoordenadas response",1);
-            throw $th;
-        }
+        $response = $this->fazerRequisicao('prefectures/findByCoordinates/'.$lat.'/'.$long);
+        return $response->json();
     }
 
     public function seguirMeta($meta, $name, $email)
     {
         $data = array('name'=>$name, 'email'=>$email);
-        // $response = $this->fazerRequisicao('goal/'.$meta.'/follow', "post", $data);
-        // return $response->json();
-        try {
-            return  $this->fazerRequisicao('goal/'.$meta.'/follow', "post", $data);
-        } catch (\Throwable $th) {
-            return new ErrorException("Throw Error:: <pre> seguirMeta response",1);
-            throw $th;
-        }
+        $response = $this->fazerRequisicao('goal/'.$meta.'/follow', "post", $data);
+        return $response->json();
     }
 }
